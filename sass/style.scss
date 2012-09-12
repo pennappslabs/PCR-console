@@ -1,23 +1,28 @@
-
-.success_box {
-  background-color: #ddf5eb;
-  border-color: #339;
+#container {
+  width: 960px;
+  margin: 0 auto;
+  padding-top: 60px;
 }
-.error_box {
-  background-color: #fcc;
-  border-color: #c00;
+#query-form {
+  text-align: center;
 }
-.generic_box {
-  background-color: #ddd;
-  border-color: #333;
-}
-padded {
+.padded {
   padding: 10px;
 }
 #output {
-  border-style: solid;
   font-family: monospace;
 }
 #addressDisplay {
   padding-bottom: 10px;
+}
+ul#examples {
+  float: left;
+  list-style: none;
+  li {
+    padding-bottom: 10px;
+  }
+}
+pre {
+  border: none;
+  margin: 0;
 }
