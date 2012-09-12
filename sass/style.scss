@@ -1,0 +1,23 @@
+
+.success_box {
+  background-color: #ddf5eb;
+  border-color: #339;
+}
+.error_box {
+  background-color: #fcc;
+  border-color: #c00;
+}
+.generic_box {
+  background-color: #ddd;
+  border-color: #333;
+}
+padded {
+  padding: 10px;
+}
+#output {
+  border-style: solid;
+  font-family: monospace;
+}
+#addressDisplay {
+  padding-bottom: 10px;
+}
