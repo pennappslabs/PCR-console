@@ -9,7 +9,7 @@ linkify = (data) ->
     )
   "<pre>#{data}</pre>"
 
-load = (query) ->
+load = (query = "") ->
   $("#query").val(query)
   $("#load").addClass("disabled").val("Loading...")
   $.ajax
@@ -24,7 +24,7 @@ load = (query) ->
 
 $ ->
   $("#domain").html BASE
-  load location.hash.substring(1) if location.hash?
+  load location.hash.substring(1)
         
   $("#query-form").on "submit", (e) ->
     e.preventDefault()

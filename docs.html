@@ -10,29 +10,29 @@
   
       <h1>Penn Course Review API overview</h1>
       
-      <p><b>Purpose:</b> This document (1) helps us write the API and (2) is used by API consumers to understand its functionality.</p>
+      <p><strong>Purpose:</strong> This document (1) helps us write the API and (2) is used by API consumers to understand its functionality.</p>
       
       <p>
-      <b>Notes:</b> 
+      <strong>Notes:</strong> 
       <ul>
       <li>This document borrows heavily from the original Penn Registrar Courses API documentation (https://docs.google.com/document/d/1pSjqQXxYQDWcekqayu_RmPjBYbFiZbhLa2MVnlFGxcI/edit?hl=en_US), of which this PCR API is a super-set.</li>
       <li>Whenever we link to things, we link to the canonical alias for them.  In general, things that use IDs (i.e., shorter things) are canonical.  Everything is permanent unless we specify explicitly.</li>
       </ul>
       </p>
       
-      <p><b>The Penn Course Review API</b></p>
+      <p><strong>The Penn Course Review API</strong></p>
       
       <p>is a simple RESTful API to the data available on PennCourseReview.com  The easiest way to explain it is to look at some queries.</p>
       
-      <p><b>Return type:</b> The results will be JSON Objects, which you should be able to turn into a dictionary in whatever language you are working with, using something like json_decode.</p>
+      <p><strong>Return type:</strong> The results will be JSON Objects, which you should be able to turn into a dictionary in whatever language you are working with, using something like json_decode.</p>
       
       <p>Note: All non-canonical links (i.e. redirects) are in <font color=blue>blue</font>. The most important canonical links are in <font color=red>red</font> (common access points, or special information).</p>
       
-      <p><b>Usage:</b></p>
-      <p>All queries will be of the form <b>http://pennapps.com/courses-demo/[<i>query</i>]?token=pennappsdemo</b>
+      <p><strong>Usage:</strong></p>
+      <p>All queries will be of the form <strong>http://pennapps.com/courses-demo/[<i>query</i>]?token=pennappsdemo</strong>
       <p>Note: For security purposes, the string "?token=pennappsdemo" must be appended to the end of each query.</p>
       <p>Example Query:</p>
-      <p><b>http://pennapps.com/courses-demo/course/CIS-120?token=pennappsdemo</b></p>
+      <p><strong>http://pennapps.com/courses-demo/course/CIS-120?token=pennappsdemo</strong></p>
       
       The following are descriptions and sample output of available queries.
       
@@ -345,7 +345,7 @@
       </li>
       </ul>
       
-      <p><b>#Section resource, e.g. "CIS-120-001 in 2011c".</b></p>
+      <p><strong>#Section resource, e.g. "CIS-120-001 in 2011c".</strong></p>
       
       <p>A Section can be accessed from the following paths:</p>
       <ul>
@@ -500,7 +500,7 @@
       </li>
       </ul>
       
-      <p><b>#Review resource.</b></p>
+      <p><strong>#Review resource.</strong></p>
       
       <p>A Review contains several ratings.</p>
       
@@ -538,9 +538,9 @@
       
       <p>A Review cannot be accessed from the top-level;  it can be accessed from a Section, Course, or Instructor.</p>
       
-      <b>#Instructor resource.</b>
+      <strong>#Instructor resource.</strong>
       
-      <p><b>An Instructor can be accessed from the following paths:</b></p>
+      <p><strong>An Instructor can be accessed from the following paths:</strong></p>
       <ul>
       <li>
       <div><font color=red>/instructor/theirpennkey</font></div>
@@ -644,7 +644,7 @@
       </li>
       </ul>
       
-      <p><b>#Course History, e.g. "CIS-120"</b></p>
+      <p><strong>#Course History, e.g. "CIS-120"</strong></p>
       
       <p>A course history is a course over time; it has no associated semester. It also includes previous names. For example, the course history of CIS-160 includes the last several semesters of CIS-160, CIS-260, and CSE-260.</p>
       
@@ -699,7 +699,7 @@
       </li>
       </ul>
       
-      <p><b>#Building</b></p>
+      <p><strong>#Building</strong></p>
       
       <p>### BUILDING DATA NOT CURRENTLY AVAILABLE ###</p>
       
@@ -717,7 +717,7 @@
       </li>
       </ul>
       
-      <p><b>#Department (if top-level)</b></p>
+      <p><strong>#Department (if top-level)</strong></p>
       
       <p>A Department can be accessed from the following paths:</p>
       <ul>
@@ -764,13 +764,13 @@
       
       <p><i>Note: see https://gomockingbird.com/mockingbird/#fi6qy0z/ for mockups</i></p>
       
-      <p><b>Course Page:</b></p>
+      <p><strong>Course Page:</strong></p>
       
       <div>/CIS-121 # a Course History</div>
       <div>/CIS-121/reviews</div>
       <div>/course/2011c-CIS-121-001/review # full text review</div>
       
-      <p><b>Instructor Page:</b></p>
+      <p><strong>Instructor Page:</strong></p>
       
       <div>/instructor/<pennkey> # an Instructor</div>
       <div>/instructor/<pennkey>/reviews</div>
