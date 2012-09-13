@@ -1,19 +1,19 @@
-BASE = "http://pennapps.com/apiv2/"
+BASE = "http://api.penncoursereview.com/v1/"
 
-load = (path) ->
-  url = BASE + path
+load = (query) ->
+  $("#query").val(query)
   $.ajax
     type: "GET"
-    url: url
+    data:
+      token: $("#token").val()
+    url: BASE + query
     success: (data) =>
       console.log data
       $("#output").html "<pre>#{data}</pre>"
       hljs.highlightBlock($("pre")[0], null, false)
 
-
 $ ->
-  hljs.initHighlightingOnLoad()
-
+  $("#domain").html BASE
   load location.hash.substring(1) if location.hash?
         
   $("#query-form").on "submit", (e) ->
