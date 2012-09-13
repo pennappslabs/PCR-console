@@ -15,14 +15,14 @@
       <p>
         <strong>Notes:</strong> 
         <ul>
-          <li>This document borrows heavily from the original Penn Registrar Courses API documentation (https://docs.google.com/document/d/1pSjqQXxYQDWcekqayu_RmPjBYbFiZbhLa2MVnlFGxcI/edit?hl=en_US), of which this PCR API is a super-set.</li>
+          <li>This document borrows heavily from the original Penn Registrar Courses API documentation (<a href='https://docs.google.com/document/d/1pSjqQXxYQDWcekqayu_RmPjBYbFiZbhLa2MVnlFGxcI/edit?hl=en_US' target='_blank'>https://docs.google.com/document/d/1pSjqQXxYQDWcekqayu_RmPjBYbFiZbhLa2MVnlFGxcI/edit?hl=en_US</a>), of which this PCR API is a super-set.</li>
           <li>Whenever we link to things, we link to the canonical alias for them.  In general, things that use IDs (i.e., shorter things) are canonical.  Everything is permanent unless we specify explicitly.</li>
         </ul>
       </p>
       
       <p><strong>The Penn Course Review API</strong></p>
       
-      <p>is a simple RESTful API to the data available on PennCourseReview.com  The easiest way to explain it is to look at some queries.</p>
+      <p>is a simple RESTful API to the data available on <a href='http://penncoursereview.com'>PennCourseReview.com</a>. The easiest way to explain it is to look at some queries.</p>
       
       <p><strong>Return type:</strong> The results will be JSON Objects, which you should be able to turn into a dictionary in whatever language you are working with, using something like json_decode.</p>
       
@@ -37,48 +37,78 @@
       The following are descriptions and sample output of available queries.
       
       <h2>Top-Level Lists:</h2>
+
       <p>
-      <ul>
-      <li>
-      <div>/depts #List: all Departments across all time</div>
-      <div><pre>### Need to produce useful output for /depts ###</pre></div>
-      </li>
-      
-      <li>
-      <div>/instructors #List: all Instructors</div>
-      <div>Sample output:</div>
-      <pre>
-      {
-         "result": {
-            "values": [
-               {
-                  "id": "anaranjado", 
-                  "name": "Jaime Mundo", 
-                  "path": "/instructor/anaranjado"
+        <ul>
+          <li>
+            <div>/depts #List: all Departments across all time</div>
+            <div>Sample output:</div>
+            <pre>
+            {
+              "result": {
+                 "values": [
+                    {
+                       "id": "AAMW", 
+                       "name": "", 
+                       "path": "/depts/aamw"
+                    }, 
+                    {
+                       "id": "ACCT", 
+                       "name": "ACCOUNTING", 
+                       "path": "/depts/acct"
+                    }, 
+                    {
+                       "id": "AFAM", 
+                       "name": "AFRO-AMERICAN STUDIES", 
+                       "path": "/depts/afam"
+                    }, 
+
+                    ...
+
+                 ],
+              }
+              "retrieved": "2012-09-13 01:18:18.234678", 
+              "valid": true, 
+              "version": "0.3"
+            }
+            </pre>
+          </li>
+          
+          <li>
+            <div>/instructors #List: all Instructors</div>
+            <div>Sample output:</div>
+            <pre>
+            {
+               "result": {
+                  "values": [
+                     {
+                        "id": "anaranjado", 
+                        "name": "Jaime Mundo", 
+                        "path": "/instructor/anaranjado"
+                     }, 
+                     {
+                        "id": "amky", 
+                        "name": "Alexey Komissarouky", 
+                        "path": "/instructor/amky"
+                     },
+            
+                     ...
+            
+                  ]
                }, 
-               {
-                  "id": "amky", 
-                  "name": "Alexey Komissarouky", 
-                  "path": "/instructor/amky"
-               },
-      
-               ...
-      
-            ]
-         }, 
-         "retrieved": "2011-09-13 21:04:37.638522", 
-         "valid": true, 
-         "version": "0.2"
-      }
-      </pre>
-      <br />
-      </li>
-      
-      <li>
-      <div>/semesters #List: all Semesters</div>
-      <div><pre>### Need to produce useful output for /semesters ###</pre></div>
-      </li>
-      </ul>
+               "retrieved": "2012-09-13 01:04:37.638522", 
+               "valid": true, 
+               "version": "0.3"
+            }
+            </pre>
+            <br />
+          </li>
+          
+          <li>
+            <div>/semesters #List: all Semesters</div>
+            <div><pre>### Need to produce useful output for /semesters ###</pre></div>
+          </li>
+        </ul>
       </p>
       
       <h2>Resources:</h2>
