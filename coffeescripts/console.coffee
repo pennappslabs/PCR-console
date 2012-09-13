@@ -2,12 +2,14 @@ BASE = "http://api.penncoursereview.com/v1/"
 
 load = (query) ->
   $("#query").val(query)
+  $("#load").addClass("disabled").val("Loading...")
   $.ajax
     type: "GET"
     data:
       token: $("#token").val()
     url: BASE + query
     success: (data) =>
+      $("#load").removeClass("disabled").val("Load")
       $("#output").html "<pre>#{data}</pre>"
       hljs.highlightBlock($("pre")[0], null, false)
 
@@ -17,6 +19,5 @@ $ ->
         
   $("#query-form").on "submit", (e) ->
     e.preventDefault()
-    query = $("#query").val()
-    location.hash = query
+    location.hash = query = $("#query").val()
     load query
