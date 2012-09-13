@@ -8,7 +8,6 @@ load = (query) ->
       token: $("#token").val()
     url: BASE + query
     success: (data) =>
-      console.log data
       $("#output").html "<pre>#{data}</pre>"
       hljs.highlightBlock($("pre")[0], null, false)
 
@@ -20,5 +19,4 @@ $ ->
     e.preventDefault()
     query = $("#query").val()
     location.hash = query
-    console.log query
     load query
