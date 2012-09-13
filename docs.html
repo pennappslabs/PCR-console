@@ -154,413 +154,397 @@
       
       <p>A Course can be accessed from the following paths:</p>
       <ul>
-      <li><font color=red>/course/2041</font></li>
-      <li><font color=blue>/course/2011c-CIS-120</font> #alias for /course/2041.</li>
+        <li><font color=red>/course/2041</font></li>
+        <li><font color=blue>/course/2011c-CIS-120</font> #alias for /course/2041.</li>
       </ul>
       
       <p>A Course has the following subpaths:</p>
       <ul>
-      <li>
-      <div>/[course] #general info, e.g. list of aliases, name, description, brief info about all Sections this course has.</div>
-      <div>Sample output:</div>
-      <div style="background-color: LightGray; height: 120px; overflow-y: scroll;">
-      <pre>
-      {
-         "result": {
-            "aliases": [
-               "FNAR-337"
-            ], 
-            "credits": 1.0, 
-            "description": "Explore the majesty of the color Orange in its natural habitat, and ridicule other, uglier colors, such as Chartreuse (eww).", 
-            "history": {
-               "path": "/course/88/history"
-            }, 
-            "id": 88, 
-            "name": "Advanced Orange", 
-            "path": "/course/88", 
-            "reviews": {
-               "path": "/course/88/reviews"
-            }, 
-            "sections": {
-               "path": "/course/88/sections", 
-               "values": [
-                  {
-                     "aliases": [
-                        "FNAR-337-001"
-                     ], 
-                     "id": "88-001", 
-                     "name": "Advanced Orange", 
-                     "path": "/course/88/section/001", 
-                     "sectionnum": "001"
-                  }
-               ]
-            }
-         }, 
-         "retrieved": "2011-09-13 21:46:41.575956", 
-         "valid": true, 
-         "version": "0.2"
-      }
-      </pre>
-      </div>
-      <br />
-      </li>
-      
-      <li>
-      <div>/[course]/reviews #what do people think of this course (i.e. rating numbers). Review data is per section. Doesn't include full text reviews (but includes links to the section/review, which does).</div>
-      <div>Sample output:</div>
-      <div style="background-color: LightGray; height: 120px; overflow-y: scroll;">
-      <pre>
-      {
-         "result": {
-            "values": [
-               {
-                  "comments": null, 
-                  "path": "/course/88/section/001/review/anaranjado", 
-                  "ratings": {
-                     "Course": 2.4500000000000002, 
-                     "Difficulty": 2.54, 
-                     "Instructor": 2.5499999999999998, 
-                     "Learned": 3, 
-                     "Readings": 3, 
-                     "Workload": 3
-                  }, 
-                  "section": {
-                     "aliases": [
-                        "FNAR-337-001"
-                     ], 
-                     "id": "88-001", 
-                     "name": "Advanced Orange", 
-                     "path": "/course/88/section/001", 
-                     "sectionnum": "001"
-                  }
-               }
-            ]
-         }, 
-         "retrieved": "2011-09-13 21:50:09.743629", 
-         "valid": true, 
-         "version": "0.2"
-      }
-      </pre>
-      </div>
-      <br />
-      </li>
-      
-      <li>
-      <div>/[course]/sections #List: more detailed info about the Sections this course has</div>
-      <div>Sample output:</div>
-      <div style="background-color: LightGray; height: 120px; overflow-y: scroll;">
-      <pre>
-      {
-         "result": {
-            "values": [
-               {
-                  "aliases": [
-                     "FNAR-337-001"
-                  ], 
-                  "course": {
-                     "aliases": [
-                        "FNAR-337"
-                     ], 
-                     "id": 88, 
-                     "name": "Advanced Orange", 
-                     "path": "/course/88"
-                  }, 
-                  "group": 1, 
-                  "id": "88-001", 
-                  "instructors": [
-                     {
-                        "id": "anaranjado", 
-                        "name": "Jaime Mundo", 
-                        "path": "/instructor/anaranjado"
-                     }
-                  ], 
-                  "meetingtimes": [
-                     {
-                        "day": "W", 
-                        "end": "15:00", 
-                        "room": {
-                           "building": {
-                              "id": "LEVH", 
-                              "latitude": 13.371337, 
-                              "longitude": 90.010000000000005, 
-                              "name": "Levine Hall", 
-                              "path": "/building/LEVH"
-                           }, 
-                           "id": "LEVH 101", 
-                           "name": "Wu and Chen Auditorium", 
-                           "number": "101"
-                        }, 
-                        "start": "13:30", 
-                        "type": "LEC"
-                     }
-                  ], 
-                  "name": "Advanced Orange", 
-                  "path": "/course/88/section/001", 
-                  "reviews": {
-                     "path": "/course/88/section/001/reviews"
-                  }, 
-                  "sectionnum": "001"
-               }
-            ]
-         }, 
-         "retrieved": "2011-09-13 21:52:34.422995", 
-         "valid": true, 
-         "version": "0.2"
-      }
-      </pre>
-      </div>
-      <br />
-      </li>
-      
-      <li>
-      <div><font color=blue>/[course]/section/001</font> #a Section resource</div>
-      <div>Sample output:</div>
-      <div style="background-color: LightGray; height: 120px; overflow-y: scroll;">
-      <pre>
-      { 
-         "result": {
-            "aliases": [
-               "FNAR-337-001"
-            ], 
-            "course": {
-               "aliases": [
-                  "FNAR-337"
-               ], 
-               "id": 88, 
-               "name": "Advanced Orange", 
-               "path": "/course/88"
-            }, 
-            "group": 1, 
-            "id": "88-001", 
-            "instructors": [
-               {
-                  "id": "anaranjado", 
-                  "name": "Jaime Mundo", 
-                  "path": "/instructor/anaranjado"
-               }
-            ], 
-            "meetingtimes": [
-               {
-                  "day": "W", 
-                  "end": "15:00", 
-                  "room": {
-                     "building": {
-                        "id": "LEVH", 
-                        "latitude": 13.371337, 
-                        "longitude": 90.010000000000005, 
-                        "name": "Levine Hall", 
-                        "path": "/building/LEVH"
-                     }, 
-                     "id": "LEVH 101", 
-                     "name": "Wu and Chen Auditorium", 
-                     "number": "101"
-                  }, 
-                  "start": "13:30", 
-                  "type": "LEC"
-               }
-            ], 
-            "name": "Advanced Orange", 
-            "path": "/course/88/section/001", 
-            "reviews": {
-               "path": "/course/88/section/001/reviews"
-            }, 
-            "sectionnum": "001"
-         }, 
-         "retrieved": "2011-09-13 21:54:13.297739", 
-         "valid": true, 
-         "version": "0.2"
-      }
-      </pre>
-      </div>
-      <br />
-      </li>
-      
-      <li>
-      <div><font color=blue>/[course]/history</font> #alias to a Course History<div>
-      <div>Sample output:</div>
-      <div style="background-color: LightGray; height: 120px; overflow-y: scroll;">
-      <pre>
-      {
-         "result": {
-            "courses": [
-               {
-                  "aliases": [
-                     "FNAR-337"
-                  ], 
-                  "id": 88, 
-                  "name": "Advanced Orange", 
-                  "path": "/course/88"
-               }
-            ], 
-            "id": 1000088, 
-            "path": "/coursehistory/1000088", 
-            "reviews": {
-               "path": "/coursehistory/1000088/reviews"
-            }
-         }, 
-         "retrieved": "2011-09-13 22:00:05.138112", 
-         "valid": true, 
-         "version": "0.2"
-      }
-      </pre>
-      </div>
-      <br />
-      </li>
+        <li>
+          <div>/[course] #general info, e.g. list of aliases, name, description, brief info about all Sections this course has.</div>
+          <div>Sample output:</div>
+          <pre>
+          {
+             "result": {
+                "aliases": [
+                   "FNAR-337"
+                ], 
+                "credits": 1.0, 
+                "description": "Explore the majesty of the color Orange in its natural habitat, and ridicule other, uglier colors, such as Chartreuse (eww).", 
+                "history": {
+                   "path": "/course/88/history"
+                }, 
+                "id": 88, 
+                "name": "Advanced Orange", 
+                "path": "/course/88", 
+                "reviews": {
+                   "path": "/course/88/reviews"
+                }, 
+                "sections": {
+                   "path": "/course/88/sections", 
+                   "values": [
+                      {
+                         "aliases": [
+                            "FNAR-337-001"
+                         ], 
+                         "id": "88-001", 
+                         "name": "Advanced Orange", 
+                         "path": "/course/88/section/001", 
+                         "sectionnum": "001"
+                      }
+                   ]
+                }
+             }, 
+             "retrieved": "2011-09-13 21:46:41.575956", 
+             "valid": true, 
+             "version": "0.2"
+          }
+          </pre>
+          <br />
+        </li>
+        
+        <li>
+          <div>/[course]/reviews #what do people think of this course (i.e. rating numbers). Review data is per section. Doesn't include full text reviews (but includes links to the section/review, which does).</div>
+          <div>Sample output:</div>
+          <pre>
+          {
+             "result": {
+                "values": [
+                   {
+                      "comments": null, 
+                      "path": "/course/88/section/001/review/anaranjado", 
+                      "ratings": {
+                         "Course": 2.4500000000000002, 
+                         "Difficulty": 2.54, 
+                         "Instructor": 2.5499999999999998, 
+                         "Learned": 3, 
+                         "Readings": 3, 
+                         "Workload": 3
+                      }, 
+                      "section": {
+                         "aliases": [
+                            "FNAR-337-001"
+                         ], 
+                         "id": "88-001", 
+                         "name": "Advanced Orange", 
+                         "path": "/course/88/section/001", 
+                         "sectionnum": "001"
+                      }
+                   }
+                ]
+             }, 
+             "retrieved": "2011-09-13 21:50:09.743629", 
+             "valid": true, 
+             "version": "0.2"
+          }
+          </pre>
+          <br />
+        </li>
+        
+        <li>
+          <div>/[course]/sections #List: more detailed info about the Sections this course has</div>
+          <div>Sample output:</div>
+          <pre>
+          {
+             "result": {
+                "values": [
+                   {
+                      "aliases": [
+                         "FNAR-337-001"
+                      ], 
+                      "course": {
+                         "aliases": [
+                            "FNAR-337"
+                         ], 
+                         "id": 88, 
+                         "name": "Advanced Orange", 
+                         "path": "/course/88"
+                      }, 
+                      "group": 1, 
+                      "id": "88-001", 
+                      "instructors": [
+                         {
+                            "id": "anaranjado", 
+                            "name": "Jaime Mundo", 
+                            "path": "/instructor/anaranjado"
+                         }
+                      ], 
+                      "meetingtimes": [
+                         {
+                            "day": "W", 
+                            "end": "15:00", 
+                            "room": {
+                               "building": {
+                                  "id": "LEVH", 
+                                  "latitude": 13.371337, 
+                                  "longitude": 90.010000000000005, 
+                                  "name": "Levine Hall", 
+                                  "path": "/building/LEVH"
+                               }, 
+                               "id": "LEVH 101", 
+                               "name": "Wu and Chen Auditorium", 
+                               "number": "101"
+                            }, 
+                            "start": "13:30", 
+                            "type": "LEC"
+                         }
+                      ], 
+                      "name": "Advanced Orange", 
+                      "path": "/course/88/section/001", 
+                      "reviews": {
+                         "path": "/course/88/section/001/reviews"
+                      }, 
+                      "sectionnum": "001"
+                   }
+                ]
+             }, 
+             "retrieved": "2011-09-13 21:52:34.422995", 
+             "valid": true, 
+             "version": "0.2"
+          }
+          </pre>
+          <br />
+        </li>
+        
+        <li>
+          <div><font color=blue>/[course]/section/001</font> #a Section resource</div>
+          <div>Sample output:</div>
+          <pre>
+          { 
+             "result": {
+                "aliases": [
+                   "FNAR-337-001"
+                ], 
+                "course": {
+                   "aliases": [
+                      "FNAR-337"
+                   ], 
+                   "id": 88, 
+                   "name": "Advanced Orange", 
+                   "path": "/course/88"
+                }, 
+                "group": 1, 
+                "id": "88-001", 
+                "instructors": [
+                   {
+                      "id": "anaranjado", 
+                      "name": "Jaime Mundo", 
+                      "path": "/instructor/anaranjado"
+                   }
+                ], 
+                "meetingtimes": [
+                   {
+                      "day": "W", 
+                      "end": "15:00", 
+                      "room": {
+                         "building": {
+                            "id": "LEVH", 
+                            "latitude": 13.371337, 
+                            "longitude": 90.010000000000005, 
+                            "name": "Levine Hall", 
+                            "path": "/building/LEVH"
+                         }, 
+                         "id": "LEVH 101", 
+                         "name": "Wu and Chen Auditorium", 
+                         "number": "101"
+                      }, 
+                      "start": "13:30", 
+                      "type": "LEC"
+                   }
+                ], 
+                "name": "Advanced Orange", 
+                "path": "/course/88/section/001", 
+                "reviews": {
+                   "path": "/course/88/section/001/reviews"
+                }, 
+                "sectionnum": "001"
+             }, 
+             "retrieved": "2011-09-13 21:54:13.297739", 
+             "valid": true, 
+             "version": "0.2"
+          }
+          </pre>
+          <br />
+        </li>
+        
+        <li>
+          <div><font color=blue>/[course]/history</font> #alias to a Course History<div>
+          <div>Sample output:</div>
+          <pre>
+          {
+             "result": {
+                "courses": [
+                   {
+                      "aliases": [
+                         "FNAR-337"
+                      ], 
+                      "id": 88, 
+                      "name": "Advanced Orange", 
+                      "path": "/course/88"
+                   }
+                ], 
+                "id": 1000088, 
+                "path": "/coursehistory/1000088", 
+                "reviews": {
+                   "path": "/coursehistory/1000088/reviews"
+                }
+             }, 
+             "retrieved": "2011-09-13 22:00:05.138112", 
+             "valid": true, 
+             "version": "0.2"
+          }
+          </pre>
+          <br />
+        </li>
       </ul>
       
       <p><strong>#Section resource, e.g. "CIS-120-001 in 2011c".</strong></p>
       
       <p>A Section can be accessed from the following paths:</p>
       <ul>
-      <li>
-      <div><font color=red>/course/2041/section/001</font></div>
-      </li>
-      
-      <li>
-      <div><font color=blue>/section/2011c-CIS-120-001</font> #alias. note, don't mix and match string vs int representations of canonical urls</div>
-      </li>
+        <li>
+          <font color=red>/course/2041/section/001</font>
+        </li>
+        
+        <li>
+          <font color=blue>/section/2011c-CIS-120-001</font> #alias. note, don't mix and match string vs int representations of canonical urls
+        </li>
       </ul>
       
       <p>A Section has the following subpaths:</p>
       <ul>
-      <li>
-      <div>/[section]</div>
-      <div>Sample output:</div>
-      <div style="background-color: LightGray; height: 120px; overflow-y: scroll;">
-      <pre>
-      {
-         "result": {
-            "aliases": [
-               "FNAR-337-001"
-            ], 
-            "course": {
-               "aliases": [
-                  "FNAR-337"
-               ], 
-               "id": 88, 
-               "name": "Advanced Orange", 
-               "path": "/course/88"
-            }, 
-            "group": 1, 
-            "id": "88-001", 
-            "instructors": [
-               {
-                  "id": "anaranjado", 
-                  "name": "Jaime Mundo", 
-                  "path": "/instructor/anaranjado"
-               }
-            ], 
-            "meetingtimes": [
-               {
-                  "day": "W", 
-                  "end": "15:00", 
-                  "room": {
-                     "building": {
-                        "id": "LEVH", 
-                        "latitude": 13.371337, 
-                        "longitude": 90.010000000000005, 
-                        "name": "Levine Hall", 
-                        "path": "/building/LEVH"
-                     }, 
-                     "id": "LEVH 101", 
-                     "name": "Wu and Chen Auditorium", 
-                     "number": "101"
-                  }, 
-                  "start": "13:30", 
-                  "type": "LEC"
-               }
-            ], 
-            "name": "Advanced Orange", 
-            "path": "/course/88/section/001", 
-            "reviews": {
-               "path": "/course/88/section/001/reviews"
-            }, 
-            "sectionnum": "001"
-         }, 
-         "retrieved": "2011-09-15 20:36:03.241815", 
-         "valid": true, 
-         "version": "0.3"
-      }
-      </pre>
-      </div>
-      <br />
-      </li>
-      
-      <li>
-      <div><font color=red>/[section]/reviews</font> # provides all reviews of this section. Typically there is at most one, but there can be more if a section was taught by multiple instructors. Includes full text.</div>
-      <div>Sample output:</div>
-      <div style="background-color: LightGray; height: 120px; overflow-y: scroll;">
-      <pre>
-      {
-         "result": {
-            "values": [
-               {
-                  "comments": "Nyanyanyanyan!", 
-                  "path": "/course/88/section/001/review/anaranjado", 
-                  "ratings": {
-                     "Course": 2.4500000000000002, 
-                     "Difficulty": 2.54, 
-                     "Instructor": 2.5499999999999998, 
-                     "Learned": 3, 
-                     "Readings": 3, 
-                     "Workload": 3
-                  }, 
-                  "section": {
-                     "aliases": [
-                        "FNAR-337-001"
-                     ], 
-                     "id": "88-001", 
-                     "name": "Advanced Orange", 
-                     "path": "/course/88/section/001", 
-                     "sectionnum": "001"
-                  }
-               }
-            ]
-         }, 
-         "retrieved": "2011-09-15 20:38:37.273812", 
-         "valid": true, 
-         "version": "0.3"
-      }
-      </pre>
-      </div>
-      <br />
-      </li>
-      
-      <li>
-      <div><font color=red>/[section]/review/instructorpennkey</font> # provides at most one review, for the specified instructor. Includes full text.</div>
-      <div>Sample output:</div>
-      <div style="background-color: LightGray; height: 120px; overflow-y: scroll;">
-      <pre>
-      {
-         "result": {
-            "comments": "Nyanyanyanyan!", 
-            "path": "/course/88/section/001/review/anaranjado", 
-            "ratings": {
-               "Course": 2.4500000000000002, 
-               "Difficulty": 2.54, 
-               "Instructor": 2.5499999999999998, 
-               "Learned": 3, 
-               "Readings": 3, 
-               "Workload": 3
-            }, 
-            "section": {
-               "aliases": [
-                  "FNAR-337-001"
-               ], 
-               "id": "88-001", 
-               "name": "Advanced Orange", 
-               "path": "/course/88/section/001", 
-               "sectionnum": "001"
-            }
-         }, 
-         "retrieved": "2011-09-15 20:41:11.705441", 
-         "valid": true, 
-         "version": "0.3"
-      }
-      </pre>
-      </div>
-      <br />
-      </li>
+        <li>
+          <div>/[section]</div>
+          <div>Sample output:</div>
+          <pre>
+          {
+             "result": {
+                "aliases": [
+                   "FNAR-337-001"
+                ], 
+                "course": {
+                   "aliases": [
+                      "FNAR-337"
+                   ], 
+                   "id": 88, 
+                   "name": "Advanced Orange", 
+                   "path": "/course/88"
+                }, 
+                "group": 1, 
+                "id": "88-001", 
+                "instructors": [
+                   {
+                      "id": "anaranjado", 
+                      "name": "Jaime Mundo", 
+                      "path": "/instructor/anaranjado"
+                   }
+                ], 
+                "meetingtimes": [
+                   {
+                      "day": "W", 
+                      "end": "15:00", 
+                      "room": {
+                         "building": {
+                            "id": "LEVH", 
+                            "latitude": 13.371337, 
+                            "longitude": 90.010000000000005, 
+                            "name": "Levine Hall", 
+                            "path": "/building/LEVH"
+                         }, 
+                         "id": "LEVH 101", 
+                         "name": "Wu and Chen Auditorium", 
+                         "number": "101"
+                      }, 
+                      "start": "13:30", 
+                      "type": "LEC"
+                   }
+                ], 
+                "name": "Advanced Orange", 
+                "path": "/course/88/section/001", 
+                "reviews": {
+                   "path": "/course/88/section/001/reviews"
+                }, 
+                "sectionnum": "001"
+             }, 
+             "retrieved": "2011-09-15 20:36:03.241815", 
+             "valid": true, 
+             "version": "0.3"
+          }
+          </pre>
+          <br />
+        </li>
+        
+        <li>
+          <div><font color=red>/[section]/reviews</font> # provides all reviews of this section. Typically there is at most one, but there can be more if a section was taught by multiple instructors. Includes full text.</div>
+          <div>Sample output:</div>
+          <pre>
+          {
+             "result": {
+                "values": [
+                   {
+                      "comments": "Nyanyanyanyan!", 
+                      "path": "/course/88/section/001/review/anaranjado", 
+                      "ratings": {
+                         "Course": 2.4500000000000002, 
+                         "Difficulty": 2.54, 
+                         "Instructor": 2.5499999999999998, 
+                         "Learned": 3, 
+                         "Readings": 3, 
+                         "Workload": 3
+                      }, 
+                      "section": {
+                         "aliases": [
+                            "FNAR-337-001"
+                         ], 
+                         "id": "88-001", 
+                         "name": "Advanced Orange", 
+                         "path": "/course/88/section/001", 
+                         "sectionnum": "001"
+                      }
+                   }
+                ]
+             }, 
+             "retrieved": "2011-09-15 20:38:37.273812", 
+             "valid": true, 
+             "version": "0.3"
+          }
+          </pre>
+          <br />
+        </li>
+        
+        <li>
+          <div><font color=red>/[section]/review/instructorpennkey</font> # provides at most one review, for the specified instructor. Includes full text.</div>
+          <div>Sample output:</div>
+          <pre>
+          {
+             "result": {
+                "comments": "Nyanyanyanyan!", 
+                "path": "/course/88/section/001/review/anaranjado", 
+                "ratings": {
+                   "Course": 2.4500000000000002, 
+                   "Difficulty": 2.54, 
+                   "Instructor": 2.5499999999999998, 
+                   "Learned": 3, 
+                   "Readings": 3, 
+                   "Workload": 3
+                }, 
+                "section": {
+                   "aliases": [
+                      "FNAR-337-001"
+                   ], 
+                   "id": "88-001", 
+                   "name": "Advanced Orange", 
+                   "path": "/course/88/section/001", 
+                   "sectionnum": "001"
+                }
+             }, 
+             "retrieved": "2011-09-15 20:41:11.705441", 
+             "valid": true, 
+             "version": "0.3"
+          }
+          </pre>
+          <br />
+        </li>
       </ul>
       
       <p><strong>#Review resource.</strong></p>
@@ -570,31 +554,36 @@
       <p>The ratings correspond to the following questions:</p>
       
       <table class='table table-striped table-condensed table-bordered'>
-      <tr><td>rCourseQuality</td><td>Overall Quality of the course.</td></tr>
-      <tr><td>rInstructorQuality</td><td>Overall Quality of the instructor.</td></tr>
-      <tr><td>rDifficulty</td><td>Please rate the difficulty of the course. (0=easy to 4=difficult)</td></tr>
-      <tr><td>rCommAbility</td><td>Instructor's ability to communicate the subject matter.</td></tr>
-      <tr><td>rInstructorAccess</td><td>Instructor's accessibility and willingness to to discuss course content and any problems.</td></tr>
-      <tr><td>rReadingsValue</td><td>Value of assigned readings.</td></tr>
-      <tr><td>rAmountLearned</td><td>Amount learned from this course in terms of knowledge, concepts, skills and thinking ability.</td></tr>
-      <tr><td>rWorkRequired</td><td>Please rate the amount of work required for this course. (0=very little to 4=very much)</td></tr>
-      <tr><td>rRecommendMajor</td><td>Would you recommend this course to a major? (0=no to 4=strongly)</td></tr>
-      <tr><td>rRecommendNonMajor</td><td>Would you recommend this course to a non-major? (0=no to 4=strongly)</td></tr>
-      <tr><td>rStimulateInterest</td><td>Was the instructor able to stimulate your interest in the material?</td></tr>
-      <tr><td>rArticulateGoals</td><td>Were the goals of the course clearly articulated?</td></tr>
-      <tr><td>rSkillEmphasis</td><td>Was the emphasis placed on the language skills (speaking, listening, reading writing) appropriate in terms of the defined goals of the course?</td></tr>
-      <tr><td>rHomeworkValuable</td><td>Were homework exercises (and compositions, where appropriate) valuable reinforcement of classroom work?</td></tr>
-      <tr><td>rExamsConsistent</td><td>Were the exams consistent with assignments, materials, and method of instruction?</td></tr>
-      <tr><td>rAbilitiesChallenged</td><td>Were your linguistic abilities in reading, writing, speaking, and listening sufficiently challenged?</td></tr>
-      <tr><td>rClassPace</td><td>How would you rate the pace of the course? (0=much to slow; 1=too slow; 2=just right; 3=too fast; 4=much too fast)</td></tr>
-      <tr><td>rOralSkills</td><td>Did the instructor organize appropriate activities in class to encourage the use of oral skills?</td></tr>
-      <tr><td>rInstructorConcern</td><td>Was the instructor concerned that students learn the materials?</td></tr>
-      <tr><td>rInstructorRapport</td><td>Please evaluate the rapport between the class and the instructor. (0=bad, 4=excellent)</td></tr>
-      <tr><td>rInstructorAttitude</td><td>Please rate the instructor's attitude towards the course.</td></tr>
-      <tr><td>rInstructorEffective</td><td>Please rate the instructor's effectiveness in presenting and explaining course materials.</td></tr>
-      <tr><td>rGradeFairness</td><td>Please rate the fairness of the grading process in the course.</td></tr>
-      <tr><td>rNativeAbility</td><td>Do you feel that the skills learned in this course would help you survive in a native environment?</td></tr>
-      <tr><td>rTAQuality</td><td>Please evaluate the overall quality of the teaching assistant/drill instructor in the course.</td></tr>
+        <thead>
+          <tr><th>Rating</th><th>Question</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>rCourseQuality</td><td>Overall Quality of the course.</td></tr>
+          <tr><td>rInstructorQuality</td><td>Overall Quality of the instructor.</td></tr>
+          <tr><td>rDifficulty</td><td>Please rate the difficulty of the course. (0=easy to 4=difficult)</td></tr>
+          <tr><td>rCommAbility</td><td>Instructor's ability to communicate the subject matter.</td></tr>
+          <tr><td>rInstructorAccess</td><td>Instructor's accessibility and willingness to to discuss course content and any problems.</td></tr>
+          <tr><td>rReadingsValue</td><td>Value of assigned readings.</td></tr>
+          <tr><td>rAmountLearned</td><td>Amount learned from this course in terms of knowledge, concepts, skills and thinking ability.</td></tr>
+          <tr><td>rWorkRequired</td><td>Please rate the amount of work required for this course. (0=very little to 4=very much)</td></tr>
+          <tr><td>rRecommendMajor</td><td>Would you recommend this course to a major? (0=no to 4=strongly)</td></tr>
+          <tr><td>rRecommendNonMajor</td><td>Would you recommend this course to a non-major? (0=no to 4=strongly)</td></tr>
+          <tr><td>rStimulateInterest</td><td>Was the instructor able to stimulate your interest in the material?</td></tr>
+          <tr><td>rArticulateGoals</td><td>Were the goals of the course clearly articulated?</td></tr>
+          <tr><td>rSkillEmphasis</td><td>Was the emphasis placed on the language skills (speaking, listening, reading writing) appropriate in terms of the defined goals of the course?</td></tr>
+          <tr><td>rHomeworkValuable</td><td>Were homework exercises (and compositions, where appropriate) valuable reinforcement of classroom work?</td></tr>
+          <tr><td>rExamsConsistent</td><td>Were the exams consistent with assignments, materials, and method of instruction?</td></tr>
+          <tr><td>rAbilitiesChallenged</td><td>Were your linguistic abilities in reading, writing, speaking, and listening sufficiently challenged?</td></tr>
+          <tr><td>rClassPace</td><td>How would you rate the pace of the course? (0=much to slow; 1=too slow; 2=just right; 3=too fast; 4=much too fast)</td></tr>
+          <tr><td>rOralSkills</td><td>Did the instructor organize appropriate activities in class to encourage the use of oral skills?</td></tr>
+          <tr><td>rInstructorConcern</td><td>Was the instructor concerned that students learn the materials?</td></tr>
+          <tr><td>rInstructorRapport</td><td>Please evaluate the rapport between the class and the instructor. (0=bad, 4=excellent)</td></tr>
+          <tr><td>rInstructorAttitude</td><td>Please rate the instructor's attitude towards the course.</td></tr>
+          <tr><td>rInstructorEffective</td><td>Please rate the instructor's effectiveness in presenting and explaining course materials.</td></tr>
+          <tr><td>rGradeFairness</td><td>Please rate the fairness of the grading process in the course.</td></tr>
+          <tr><td>rNativeAbility</td><td>Do you feel that the skills learned in this course would help you survive in a native environment?</td></tr>
+          <tr><td>rTAQuality</td><td>Please evaluate the overall quality of the teaching assistant/drill instructor in the course.</td></tr>
+        </tbody>
       </table>
       
       <p>If accessed from a Section, a Review also contains a full text review.</p>
@@ -605,9 +594,9 @@
       
       <p><strong>An Instructor can be accessed from the following paths:</strong></p>
       <ul>
-      <li>
-      <div><font color=red>/instructor/theirpennkey</font></div>
-      </li>
+        <li>
+          <font color=red>/instructor/theirpennkey</font>
+        </li>
       </ul>
       
       <p>An Instructor has the following subpaths:<p>
