@@ -1,7 +1,7 @@
 #container {
   width: 960px;
   margin: 0 auto;
-  padding-top: 60px;
+  padding-top: 20px;
   padding-bottom: 60px;
 }
 #query-form {
@@ -26,4 +26,10 @@ ul#examples {
 pre {
   border: none;
   margin: 0;
+}
+.loading {
+  opacity: 0.6;
+}
+.no-list {
+  list-style: none;
 }

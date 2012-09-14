@@ -12,6 +12,7 @@ linkify = (data) ->
 load = (query = "") ->
   $("#query").val(query)
   $("#load").addClass("disabled").val("Loading...")
+  $("#output").addClass("loading")
   $.ajax
     type: "GET"
     data:
@@ -19,6 +20,7 @@ load = (query = "") ->
     url: BASE + query
     success: (data) =>
       $("#load").removeClass("disabled").val("Load")
+      $("#output").removeClass("loading")
       $("#output").html linkify(data)
       hljs.highlightBlock($("pre")[0], null, false)
 
