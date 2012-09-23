@@ -1,7 +1,7 @@
 #container {
   width: 960px;
   margin: 0 auto;
-  padding-top: 20px;
+  padding-top: 60px;
   padding-bottom: 60px;
 }
 #query-form {
@@ -32,4 +32,10 @@ pre {
 }
 .no-list {
   list-style: none;
+}
+#source {
+  margin-bottom: 10px;
+  &:before {
+    content: "Source: ";
+  }
 }

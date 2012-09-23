@@ -13,15 +13,15 @@ load = (query = "") ->
   $("#query").val(query)
   $("#load").addClass("disabled").val("Loading...")
   $("#output").addClass("loading")
+  url = BASE + query + "?token=#{$("#token").val()}"
   $.ajax
     type: "GET"
-    data:
-      token: $("#token").val()
-    url: BASE + query
+    url: url
     success: (data) =>
       $("#load").removeClass("disabled").val("Load")
       $("#output").removeClass("loading")
       $("#output").html linkify(data)
+      $("#source").html("<a href='#{url}'>#{url}</a>")
       hljs.highlightBlock($("pre")[0], null, false)
 
 $ ->
