@@ -8,7 +8,7 @@ Penn Course Review API console
 
 ### Setup
 
-* sass --watch sass:stylesheets
-* coffee -o js/ -cw coffeescripts/
+* `sass --watch sass:stylesheets`
+* `coffee -o js/ -cw coffeescripts/`
 
 
