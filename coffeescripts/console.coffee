@@ -30,7 +30,6 @@ $ ->
         
   $("#query-form").on "submit", (e) ->
     e.preventDefault()
-    location.hash = query = $("#query").val()
-    load query
+    location.hash = $("#query").val()
   # fires every time the hash changes so whenever the user clicks a link
   $(window).on "hashchange", () -> load location.hash.substring(1)
