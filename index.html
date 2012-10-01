@@ -14,7 +14,10 @@
           <input class='input-xlarge' name='query' id="query" type="text">
           <input id='load' class='btn btn-primary' type="submit" value="Load">
         </div>
-        <input class='span4 pull-right' id='token' name="apitoken" value='public' type="text" placeholder="API Token">
+        <div class='pull-right'>
+          <label for='apitoken'>API Token</label>
+          <input class='span3' id='token' name="apitoken" value='public' type="text">
+        </div>
       </form>
       <div class="well" id='source'></div>
       <div id="output" class="well">Loading data...</div>
