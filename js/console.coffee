@@ -1,3 +1,5 @@
+---
+---
 BASE = "http://api.penncoursereview.com/v1/"
 
 linkify = (data) ->

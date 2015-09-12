@@ -1,4 +1,10 @@
-stylesheets/
-!bootstrap.min.css
+### Sass ###
 .sass-cache/
-js/
+*.css.map
+
+### Jekyll ###
+_site/
+.jekyll-metadata
+!bootstrap.min.css
+*.css
+*.js
