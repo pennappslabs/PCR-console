@@ -19,6 +19,7 @@ load = (query = "") ->
   $.ajax
     type: "GET"
     url: url
+    dataType: "text"
     success: (data) =>
       $("#load").removeClass("disabled").val("Load")
       $("#output").removeClass("loading")
