@@ -29,7 +29,7 @@ load = (query = "") ->
 $ ->
   $("#domain").html BASE
   load location.hash.substring(1)
-        
+
   $("#query-form").on "submit", (e) ->
     e.preventDefault()
     location.hash = $("#query").val()
