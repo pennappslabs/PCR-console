@@ -19,6 +19,7 @@ load = (query = "") ->
   $.ajax
     type: "GET"
     url: url
+    dataType: "text"
     success: (data) =>
       $("#load").removeClass("disabled").val("Load")
       $("#output").removeClass("loading")
@@ -29,7 +30,7 @@ load = (query = "") ->
 $ ->
   $("#domain").html BASE
   load location.hash.substring(1)
-        
+
   $("#query-form").on "submit", (e) ->
     e.preventDefault()
     location.hash = $("#query").val()
